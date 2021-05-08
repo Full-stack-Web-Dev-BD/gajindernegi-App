@@ -1,4 +1,4 @@
-/* eslint-disable react/no-array-index-key, react/no-danger */
+/* -disable react/no-array-index-key, react/no-danger */
 import React, { useState, useEffect, useRef } from 'react';
 import { Nav, NavItem, TabContent, TabPane } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
@@ -244,7 +244,6 @@ const Home = () => {
         'show-mobile-menu': showMobileMenu,
       })}
     >
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div className="mobile-menu" onClick={(event) => event.stopPropagation()}>
         <a href="/">
           <img src="/logo.png"/>
@@ -395,7 +394,6 @@ const Home = () => {
                   </a>
                 </li>
               </ul>
-              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
               <span
                 className="mobile-menu-button"
                 onClick={(event) => {
@@ -438,7 +436,6 @@ const Home = () => {
                       <br />
                       Hope you enjoy it!
                     </p>
-                    {/* eslint-disable-next-line react/jsx-no-target-blank */}
                     <a
                       className="btn btn-light btn-xl mr-2 mb-2"
                       href={adminRoot}
@@ -448,7 +445,6 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="col-12 col-xl-7 offset-xl-1 col-lg-7 col-md-6  d-none d-md-block">
-                  {/* eslint-disable-next-line react/jsx-no-target-blank */}
                   <a href={adminRoot} target="_blank">
                     <img
                       alt="hero"
@@ -463,7 +459,6 @@ const Home = () => {
                   <div className="home-carousel">
                     <GlideComponent settings={slideSettings}>
                       {slideItems.map((f, index) => (
-                        // eslint-disable-next-line react/no-array-index-key
                         <div key={`slide_${index}`} className="card">
                           <div className="card-body text-center">
                             <div>
@@ -509,7 +504,6 @@ const Home = () => {
                 </div>
               </div>
               {features.map((feature, i) => (
-                // eslint-disable-next-line react/no-array-index-key
                 <div key={`feature_${i}`}>
                   {i % 2 === 0 && (
                     <div className="row feature-row">

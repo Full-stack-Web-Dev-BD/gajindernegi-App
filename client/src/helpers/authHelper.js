@@ -44,5 +44,5 @@ const ProtectedRoute = ({
   return <Route {...rest} render={setComponent} />;
 };
 
-// eslint-disable-next-line import/prefer-default-export
+
 export { ProtectedRoute };

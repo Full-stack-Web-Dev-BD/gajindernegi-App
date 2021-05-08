@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import {
   CHAT_GET_CONTACTS,
   CHAT_GET_CONTACTS_SUCCESS,

@@ -11,7 +11,6 @@ import {
 import surveyDetailData from '../../data/survey.detail.json';
 
 const getSurveyDetailRequest = async () => {
-  // eslint-disable-next-line no-return-await
   return await new Promise((success) => {
     setTimeout(() => {
       success(surveyDetailData.data);
@@ -22,9 +21,7 @@ const getSurveyDetailRequest = async () => {
 };
 
 const deleteQuestionRequest = async (quesitonId, survey) => {
-  // eslint-disable-next-line no-param-reassign
   survey.questions = survey.questions.filter((x) => x.id !== quesitonId);
-  // eslint-disable-next-line no-return-await
   return await new Promise((success) => {
     success(survey);
   })

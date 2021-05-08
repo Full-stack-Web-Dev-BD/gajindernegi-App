@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useState, useRef, useEffect } from 'react';
 import { NavLink } from 'reactstrap';
 
