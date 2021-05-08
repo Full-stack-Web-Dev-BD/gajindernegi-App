@@ -1,4 +1,5 @@
-import React from 'react';
+import { Input } from '@material-ui/core';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { 
   CardText,
@@ -12,10 +13,28 @@ import {
   
 } from 'reactstrap';
 import IntlMessages from '../../../helpers/IntlMessages';
+import UploadPage from './UploadPage/UploadPage';
 
 const AssetManager = ({ match }) => {
+  const [showUploadComponent, setShowUploadComponent] = useState(false)
+  
   return (
     <> 
+    <div className="mt-3 mb-5"> 
+    {
+      showUploadComponent ? 
+    <UploadPage/>:
+     <a
+      className="btn btn-outline-primary btn-sm ml-2"
+      target="_top"
+      href="#"
+      onClick={e=>{setShowUploadComponent(!showUploadComponent)}}
+    >
+      <span className="simple-icon-cloud-upload glyph-icon"></span>
+      <IntlMessages id="  Upload Media " />
+    </a>
+    }
+    </div>
       <div className="row">
         {
         [3,1234,15,13,,3,1].map(el=>(
