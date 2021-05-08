@@ -263,7 +263,7 @@ const TopNav = ({
             </DropdownToggle>
             <DropdownMenu className="mt-3" right>
               <DropdownItem>Account</DropdownItem>
-              <DropdownItem onClick={() => handleLogout()}>
+              <DropdownItem onClick={() => window.location.href='/' }>
                 Sign out
               </DropdownItem>
             </DropdownMenu>

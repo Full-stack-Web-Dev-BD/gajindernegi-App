@@ -84,7 +84,7 @@ class App extends React.Component {
                   />       
                   <Route
                     exact
-                    path="/login"
+                    path="/"
                     render={(props) => <Login {...props} />}
                   />
                   <Route

@@ -28,7 +28,7 @@ const Register = ({ history }) => {
   const [role, setRole] = useState('')
   const onUserRegister = (e) => {
     e.preventDefault();
-      return history.push('/login')
+      return history.push('/')
 
     const obj={
       firstName,
@@ -42,7 +42,7 @@ const Register = ({ history }) => {
     axios.post('/api/user/register',obj)
     .then(res=>{
 
-      return history.push('/login')
+      return history.push('/')
     })
     .catch(err=>{
       console.log(err);
@@ -111,7 +111,7 @@ const Register = ({ history }) => {
                 <br/>
               </div>
               <div className="text-center mt-4">
-              <a href="/login"  className="mt-4">Allready  Registered ? Go to Login Page</a>
+              <a href="/"  className="mt-4">Allready  Registered ? Go to Login Page</a>
               </div>
             </form>
           </div>
