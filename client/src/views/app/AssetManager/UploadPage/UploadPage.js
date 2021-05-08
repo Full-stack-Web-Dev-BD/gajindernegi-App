@@ -40,12 +40,12 @@ const UploadPage = () => {
                         <Input     required type="Title"  placeholder="Title" />
                     </FormGroup>  
                     
-                    <FormGroup className="form-group has-float-label  mb-4">
+                    {/* <FormGroup className="form-group has-float-label  mb-4">
                         <Label>
                         <IntlMessages id="Add Asset Type " />
                         </Label>
                         <input type="checkbox" value="asdf"/>
-                    </FormGroup>
+                    </FormGroup> */}
 
                     <FormGroup className="form-group has-float-label  mb-4">
                         <Label>
