@@ -13,6 +13,7 @@ import {
 import todoData from '../../data/todos.json';
 
 const getTodoListRequest = async () => {
+  // -next-line no-return-await
   return await new Promise((success) => {
     setTimeout(() => {
       success(todoData.data);
@@ -33,9 +34,12 @@ function* getTodoListItems() {
 
 const addTodoItemRequest = async (item) => {
   const items = todoData.data;
+  // -next-line no-param-reassign
   item.id = items.length + 1;
+  // -next-line no-param-reassign
   item.createDate = getDateWithFormat();
   items.splice(0, 0, item);
+  // -next-line no-return-await
   return await new Promise((success) => {
     setTimeout(() => {
       success(items);

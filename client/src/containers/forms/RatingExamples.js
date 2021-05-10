@@ -1,3 +1,6 @@
+
+/*  associated-control */
+/*  no-unused-vars */
 import React from 'react';
 import { Row } from 'reactstrap';
 import { Colxx } from '../../components/common/CustomBootstrap';

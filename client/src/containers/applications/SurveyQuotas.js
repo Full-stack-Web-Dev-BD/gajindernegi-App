@@ -1,3 +1,4 @@
+/*  react/no-array-index-key */
 import React from 'react';
 import { Card, CardBody } from 'reactstrap';
 import { Colxx } from '../../components/common/CustomBootstrap';

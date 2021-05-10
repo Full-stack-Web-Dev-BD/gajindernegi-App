@@ -1,3 +1,4 @@
+/*  no-bitwise */
 import { EventEmitter } from 'events';
 
 const createUUID = () => {

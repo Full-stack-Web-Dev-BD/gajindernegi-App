@@ -1,3 +1,4 @@
+/*  no-unused-vars */
 import React from 'react';
 
 import { Formik, Form, Field } from 'formik';

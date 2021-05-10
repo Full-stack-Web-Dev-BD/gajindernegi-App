@@ -11,16 +11,12 @@ html {
     background-color: $theme-color-1 !important;
 }
 */
-
-.theme-button {
-  display: none im !important;
+.btn-primary{
+    background-color: #7236DF;
+    border-color: #7236DF;
 }
 
-.auth-card .form-side {
-  width: 100% !important;
-}
-
-.MuiAppBar-colorPrimary {
-    color: #fff;
-    background-color: #01013F !important;
+.bg-primary, .bg-theme-1, .badge-primary, .badge-theme-1{
+    background:rgba(116, 116, 116, 0.37) !important;
+    color:black
 }

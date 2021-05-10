@@ -7,7 +7,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware];
 
-
+// -next-line import/prefer-default-export
 export function configureStore(initialState) {
   const store = createStore(
     reducers,
@@ -19,6 +19,7 @@ export function configureStore(initialState) {
 
   if (module.hot) {
     module.hot.accept('./reducers', () => {
+      // -next-line global-require
       const nextRootReducer = require('./reducers');
       store.replaceReducer(nextRootReducer);
     });

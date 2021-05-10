@@ -26,9 +26,9 @@ export default function AppBarOuter() {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <img src="/logo.png" />
+            <img src="https://brandable.ai/images/logo.svg" />
           </IconButton> 
-            <Typography variant="h6" className={classes.title}></Typography>
+            <Typography variant="h6" className={classes.title}>Home</Typography>
           <Button onClick={()=>window.location.href='/login'} color="inherit">Login</Button>
           <Button onClick={()=>window.location.href='/register'} color="inherit">Register</Button>
         </Toolbar>

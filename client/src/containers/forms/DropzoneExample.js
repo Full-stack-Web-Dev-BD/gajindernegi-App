@@ -1,3 +1,4 @@
+/*  import/no-extraneous-dependencies */
 import React, { Component } from 'react';
 import DropzoneComponent from 'react-dropzone-component';
 import 'dropzone/dist/min/dropzone.min.css';
@@ -25,6 +26,7 @@ const dropzoneConfig = {
             </span>
           </div>
           <div className="preview-container">
+            {/*  -next-line jsx-a11y/alt-text */}
             <img data-dz-thumbnail className="img-thumbnail border-0" />
             <i className="simple-icon-doc preview-icon" />
           </div>

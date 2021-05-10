@@ -23,10 +23,12 @@ import { adminRoot, currentUser } from '../../constants/defaultValues';
 import { setCurrentUser } from '../../helpers/Utils';
 
 export function* watchLoginUser() {
+  // -next-line no-use-before-define
   yield takeEvery(LOGIN_USER, loginWithEmailPassword);
 }
 
 const loginWithEmailPasswordAsync = async (email, password) =>
+  // -next-line no-return-await
   await auth
     .signInWithEmailAndPassword(email, password)
     .then((user) => user)
@@ -51,10 +53,12 @@ function* loginWithEmailPassword({ payload }) {
 }
 
 export function* watchRegisterUser() {
+  // -next-line no-use-before-define
   yield takeEvery(REGISTER_USER, registerWithEmailPassword);
 }
 
 const registerWithEmailPasswordAsync = async (email, password) =>
+  // -next-line no-return-await
   await auth
     .createUserWithEmailAndPassword(email, password)
     .then((user) => user)
@@ -83,6 +87,7 @@ function* registerWithEmailPassword({ payload }) {
 }
 
 export function* watchLogoutUser() {
+  // -next-line no-use-before-define
   yield takeEvery(LOGOUT_USER, logout);
 }
 
@@ -101,10 +106,12 @@ function* logout({ payload }) {
 }
 
 export function* watchForgotPassword() {
+  // -next-line no-use-before-define
   yield takeEvery(FORGOT_PASSWORD, forgotPassword);
 }
 
 const forgotPasswordAsync = async (email) => {
+  // -next-line no-return-await
   return await auth
     .sendPasswordResetEmail(email)
     .then((user) => user)
@@ -126,10 +133,12 @@ function* forgotPassword({ payload }) {
 }
 
 export function* watchResetPassword() {
+  // -next-line no-use-before-define
   yield takeEvery(RESET_PASSWORD, resetPassword);
 }
 
 const resetPasswordAsync = async (resetPasswordCode, newPassword) => {
+  // -next-line no-return-await
   return await auth
     .confirmPasswordReset(resetPasswordCode, newPassword)
     .then((user) => user)

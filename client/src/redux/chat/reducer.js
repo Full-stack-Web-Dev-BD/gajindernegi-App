@@ -71,7 +71,9 @@ export default (state = INIT_STATE, action) => {
       if (action.payload === '') {
         return { ...state, contacts: state.allContacts };
       }
+      // -next-line no-case-declarations
       const keyword = action.payload.toLowerCase();
+      // -next-line no-case-declarations
       const searchedContacts = state.allContacts.filter(
         (item) => item.name.toLowerCase().indexOf(keyword) > -1
       );

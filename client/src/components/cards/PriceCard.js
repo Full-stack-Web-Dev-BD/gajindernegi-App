@@ -1,3 +1,4 @@
+/*  react/no-array-index-key */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Card, CardBody } from 'reactstrap';
@@ -16,6 +17,15 @@ const PriceCard = ({ data }) => {
           <p className="text-muted text-small">{data.detail}</p>
         </div>
         <div className="pl-3 pr-3 pt-3 pb-0 d-flex price-feature-list flex-column flex-grow-1">
+          <ul className="list-unstyled">
+            {data.features.map((feature, index) => {
+              return (
+                <li key={index}>
+                  <p className="mb-0">{feature}</p>
+                </li>
+              );
+            })}
+          </ul>
           <div className="text-center">
             <NavLink to={data.link} className="btn btn-link btn-empty btn-lg">
               <IntlMessages id="pages.purchase" />{' '}

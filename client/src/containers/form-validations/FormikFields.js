@@ -1,3 +1,8 @@
+/*  no-unused-vars */
+/*  associated-control */
+
+/*  react/no-array-index-key */
+/*  max-classes-per-file */
 import React from 'react';
 import Select from 'react-select';
 import { CustomInput } from 'reactstrap';

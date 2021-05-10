@@ -1,3 +1,5 @@
+/*  no-shadow */
+/*  no-unused-vars */
 import React, { Component } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';

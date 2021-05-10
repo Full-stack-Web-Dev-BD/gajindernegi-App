@@ -1,3 +1,4 @@
+/*  no-param-reassign */
 import React, { useState } from 'react';
 import { Card, CardBody, Form, FormGroup, Input, Label } from 'reactstrap';
 import { Wizard, Steps, Step } from 'react-albus';

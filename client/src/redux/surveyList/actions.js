@@ -1,3 +1,4 @@
+// -next-line import/no-cycle
 import {
   SURVEY_LIST_GET_LIST,
   SURVEY_LIST_GET_LIST_SUCCESS,

@@ -19,6 +19,7 @@ const User = ({ match }) => {
   return (
     <UserLayout>
       <Suspense fallback={<div className="loading" />}>
+       
         <Switch>
           <Redirect exact from={`${match.url}/`} to={`${match.url}/login`} />
           <Route

@@ -1,4 +1,4 @@
-/* -disable react/no-array-index-key, react/no-danger */
+/*  react/no-array-index-key, react/no-danger */
 import React, { useState, useEffect, useRef } from 'react';
 import { Nav, NavItem, TabContent, TabPane } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
@@ -244,9 +244,14 @@ const Home = () => {
         'show-mobile-menu': showMobileMenu,
       })}
     >
+      {/* -next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div className="mobile-menu" onClick={(event) => event.stopPropagation()}>
-        <a href="/">
-          <img src="/logo.png"/>
+        <a
+          className="logo-mobile c-pointer"
+          href="#scroll"
+          onClick={(event) => scrollTo(event, 'home')}
+        >
+          <span />
         </a>
         <ul className="navbar-nav">
           <li className="nav-item">
@@ -302,19 +307,9 @@ const Home = () => {
               className="btn btn-outline-primary btn-sm mobile-menu-cta"
               target="_blank"
               rel="noopener noreferrer"
-              href="/login"
+              href={buyUrl}
             >
-              Login
-            </a>
-          </li>
-          <li className="nav-item text-center">
-            <a
-              className="btn btn-outline-primary btn-sm mobile-menu-cta"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="/register"
-            >
-              Register
+              BUY
             </a>
           </li>
         </ul>
@@ -324,8 +319,13 @@ const Home = () => {
         <Headroom className="landing-page-nav">
           <nav>
             <div className="container d-flex align-items-center justify-content-between">
-              <a href="/" >
-                <img src="/logo.png" />
+              <a
+                className="navbar-logo pull-left c-pointer"
+                href="#scroll"
+                onClick={(event) => scrollTo(event, 'home')}
+              >
+                <span className="white" />
+                <span className="dark" />
               </a>
               <ul className="navbar-nav d-none d-lg-flex flex-row">
                 <li className="nav-item">
@@ -378,22 +378,13 @@ const Home = () => {
                     className="btn btn-outline-semi-light btn-sm pr-4 pl-4"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="/Login"
+                    href={buyUrl}
                   >
-                    Login
-                  </a>
-                </li>
-                <li className="nav-item pl-4">
-                  <a
-                    className="btn btn-outline-semi-light btn-sm pr-4 pl-4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="/register"
-                  >
-                    Register
+                    BUY
                   </a>
                 </li>
               </ul>
+              {/* -next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
               <span
                 className="mobile-menu-button"
                 onClick={(event) => {
@@ -436,15 +427,18 @@ const Home = () => {
                       <br />
                       Hope you enjoy it!
                     </p>
+                    {/* -next-line react/jsx-no-target-blank */}
                     <a
                       className="btn btn-light btn-xl mr-2 mb-2"
                       href={adminRoot}
+                      target="_blank"
                     >
-                      Dashboard <i className="simple-icon-arrow-right" />
+                      VIEW NOW <i className="simple-icon-arrow-right" />
                     </a>
                   </div>
                 </div>
                 <div className="col-12 col-xl-7 offset-xl-1 col-lg-7 col-md-6  d-none d-md-block">
+                  {/* -next-line react/jsx-no-target-blank */}
                   <a href={adminRoot} target="_blank">
                     <img
                       alt="hero"
@@ -459,6 +453,7 @@ const Home = () => {
                   <div className="home-carousel">
                     <GlideComponent settings={slideSettings}>
                       {slideItems.map((f, index) => (
+                        // -next-line react/no-array-index-key
                         <div key={`slide_${index}`} className="card">
                           <div className="card-body text-center">
                             <div>
@@ -504,6 +499,7 @@ const Home = () => {
                 </div>
               </div>
               {features.map((feature, i) => (
+                // -next-line react/no-array-index-key
                 <div key={`feature_${i}`}>
                   {i % 2 === 0 && (
                     <div className="row feature-row">
@@ -725,6 +721,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+
           <div className="section footer mb-0" ref={refSectionFooter}>
             <div className="container">
               <div className="row footer-row">

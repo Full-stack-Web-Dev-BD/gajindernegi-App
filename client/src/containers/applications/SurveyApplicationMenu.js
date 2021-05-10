@@ -1,3 +1,8 @@
+/*  jsx-a11y/click-events-have-key-events */
+/*  jsx-a11y/no-static-element-interactions */
+/*  associated-control */
+
+/*  react/no-array-index-key */
 import React from 'react';
 import { connect } from 'react-redux';
 import { NavItem, Badge } from 'reactstrap';

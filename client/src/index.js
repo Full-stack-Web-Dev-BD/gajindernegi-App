@@ -1,3 +1,4 @@
+/*  global-require */
 import './assets/css/vendor/bootstrap.min.css';
 import './assets/css/vendor/bootstrap.rtl.only.min.css';
 import 'react-circular-progressbar/dist/styles.css';

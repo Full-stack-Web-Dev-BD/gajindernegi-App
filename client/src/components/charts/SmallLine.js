@@ -1,3 +1,6 @@
+/*  no-unused-vars */
+/*  no-underscore-dangle */
+/*  no-param-reassign */
 import React, { useEffect, useRef, useState } from 'react';
 import { Chart } from 'chart.js';
 

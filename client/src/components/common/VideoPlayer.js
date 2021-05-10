@@ -1,4 +1,5 @@
-
+/*  react-hooks/exhaustive-deps */
+/*  jsx-a11y/media-has-caption */
 import React, { useRef, useEffect } from 'react';
 import videojs from 'video.js';
 

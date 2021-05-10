@@ -1,3 +1,4 @@
+/*  react/no-array-index-key */
 import React from 'react';
 import { Card, CardBody, CardTitle } from 'reactstrap';
 import PerfectScrollbar from 'react-perfect-scrollbar';

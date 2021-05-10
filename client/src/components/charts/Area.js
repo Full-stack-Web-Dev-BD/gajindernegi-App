@@ -1,4 +1,4 @@
-prefer-rest-params */
+/*  prefer-rest-params */
 import React, { useEffect, useRef, useState } from 'react';
 import { Chart } from 'chart.js';
 

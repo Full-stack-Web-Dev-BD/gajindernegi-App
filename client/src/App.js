@@ -18,18 +18,13 @@ import {
 } from './constants/defaultValues';
 import { getDirection } from './helpers/Utils';
 import { ProtectedRoute } from './helpers/authHelper';
-import Register from './views/user/register';
-import Login from './views/user/login';
 
-
-// Designer Dashboard
-const ViewApp = React.lazy(() =>
-  import(/* webpackChunkName: "views-app" */ './views/app')
-);
 const ViewHome = React.lazy(() =>
   import(/* webpackChunkName: "views" */ './views/home')
 );
-
+const ViewApp = React.lazy(() =>
+  import(/* webpackChunkName: "views-app" */ './views/app')
+);
 const ViewUser = React.lazy(() =>
   import(/* webpackChunkName: "views-user" */ './views/user')
 );
@@ -53,9 +48,6 @@ class App extends React.Component {
     }
   }
 
-
-
-
   render() {
     const { locale } = this.props;
     const currentAppLocale = AppLocale[locale];
@@ -72,20 +64,14 @@ class App extends React.Component {
             <Suspense fallback={<div className="loading" />}>
               <Router>
                 <Switch>
-                  <ProtectedRoute
+                  {/* <ProtectedRoute
                     path={adminRoot}
                     component={ViewApp}
                     roles={[UserRole.Admin, UserRole.Editor]}
-                  />           
+                  /> */}
                   <Route
-                    exact
-                    path="/register"
-                    render={(props) => <Register {...props} />}
-                  />       
-                  <Route
-                    exact
-                    path="/"
-                    render={(props) => <Login {...props} />}
+                    path={adminRoot}
+                    render={(props) => <ViewApp {...props} />}
                   />
                   <Route
                     path="/user"
@@ -101,15 +87,15 @@ class App extends React.Component {
                     exact
                     render={(props) => <ViewUnauthorized {...props} />}
                   />
-                  <Route
+                  {/* <Route
                     path="/"
                     exact
                     render={(props) => <ViewHome {...props} />}
-                  />
+                  /> */}
                   {/*
                   <Redirect exact from="/" to={adminRoot} />
                   */}
-                  <Redirect to="/error" />
+                  <Redirect from="/" to="/user/login" />
                 </Switch>
               </Router>
             </Suspense>
@@ -119,7 +105,7 @@ class App extends React.Component {
     );
   }
 }
-// change comment
+
 const mapStateToProps = ({ authUser, settings }) => {
   const { currentUser } = authUser;
   const { locale } = settings;

@@ -1,3 +1,4 @@
+/*  no-param-reassign */
 import React from 'react';
 import { Card, CardBody, Row } from 'reactstrap';
 import { Wizard, Steps, Step } from 'react-albus';

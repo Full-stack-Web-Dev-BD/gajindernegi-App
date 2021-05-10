@@ -20,6 +20,7 @@ import conversationsData from '../../data/chat.conversations.json';
 
 function* loadContacts() {
   try {
+    // -next-line no-use-before-define
     const response = yield call(loadContactsAsync);
     const { contacts, currentUser } = response;
     yield put(getContactsSuccess(contacts, currentUser));
@@ -31,6 +32,7 @@ function* loadContacts() {
 const loadContactsAsync = async () => {
   const contacts = contactsData.data;
   const currentUser = contacts[0];
+  // -next-line no-return-await
   return await new Promise((success) => {
     setTimeout(() => {
       success({ contacts, currentUser });
@@ -42,6 +44,7 @@ const loadContactsAsync = async () => {
 
 function* loadConversations(userId) {
   try {
+    // -next-line no-use-before-define
     const response = yield call(loadConversationsAsync, userId);
     const { conversations, selectedUser } = response;
     yield put(getConversationsSuccess(conversations, selectedUser));
@@ -54,6 +57,7 @@ const loadConversationsAsync = async ({ payload }) => {
   let conversations = conversationsData.data;
   conversations = conversations.filter((x) => x.users.includes(payload));
   const selectedUser = conversations[0].users.find((x) => x !== payload);
+  // -next-line no-return-await
   return await new Promise((success) => {
     setTimeout(() => {
       success({ conversations, selectedUser });
@@ -73,6 +77,7 @@ function* addMessageToConversation({ payload }) {
     } = payload;
 
     const response = yield call(
+      // -next-line no-use-before-define
       addMessageToConversationAsync,
       currentUserId,
       selectedUserId,
@@ -90,6 +95,7 @@ const addMessageToConversationAsync = async (
   selectedUserId,
   message,
   allConversations
+  // -next-line consistent-return
 ) => {
   const conversation = allConversations.find(
     (x) => x.users.includes(currentUserId) && x.users.includes(selectedUserId)
@@ -107,6 +113,7 @@ const addMessageToConversationAsync = async (
     );
     conversations.splice(0, 0, conversation);
 
+    // -next-line no-return-await
     return await new Promise((success) => {
       setTimeout(() => {
         success({ conversations, selectedUser: selectedUserId });
@@ -121,6 +128,7 @@ function* createNewConversation({ payload }) {
   try {
     const { currentUserId, selectedUserId, allConversations } = payload;
     const response = yield call(
+      // -next-line no-use-before-define
       createNewConversationAsync,
       currentUserId,
       selectedUserId,
@@ -146,6 +154,7 @@ const createNewConversationAsync = async (
   };
 
   allConversations.splice(0, 0, conversation);
+  // -next-line no-return-await
   return await new Promise((success) => {
     setTimeout(() => {
       success({

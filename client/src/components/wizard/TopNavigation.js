@@ -1,3 +1,6 @@
+/*  react/no-array-index-key */
+/*  no-unused-vars */
+/*  no-param-reassign */
 import React from 'react';
 import { WithWizard } from 'react-albus';
 import { NavLink } from 'react-router-dom';

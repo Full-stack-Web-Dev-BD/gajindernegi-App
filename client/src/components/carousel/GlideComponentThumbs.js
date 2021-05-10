@@ -19,10 +19,12 @@ let carouselThumbs;
 function GlideComponentThumbs(props = defaultProps) {
   const glideCarouselImages = useRef(null);
   const glideCarouselThumbs = useRef(null);
+  // -next-line react/destructuring-assignment
   const total = props.settingsImages.data.length;
 
   const [activeIndex, setactiveIndex] = useState(0);
   const [thumbsPerView, setThumbsPerView] = useState(
+    // -next-line react/destructuring-assignment
     Math.min(props.settingsThumbs.perView, props.settingsImages.data.length)
   );
   const [renderArrows, setRenderArrows] = useState(true);
@@ -30,11 +32,13 @@ function GlideComponentThumbs(props = defaultProps) {
   const updateThumbBreakpoints = () => {
     const thumbBreakpoints = props.settingsThumbs.breakpoints;
     const newBreakpoints = {};
+    // -next-line guard-for-in,no-restricted-syntax
     for (const prop in thumbBreakpoints) {
       newBreakpoints[prop] = {
         perView: Math.min(thumbBreakpoints[prop].perView, total),
       };
     }
+    // -next-line no-param-reassign
     props.settingsThumbs.breakpoints = newBreakpoints;
   };
 
@@ -81,6 +85,7 @@ function GlideComponentThumbs(props = defaultProps) {
       direction: getDirection().direction,
     });
     carouselImages.mount();
+    // -next-line no-use-before-define
     carouselImages.on('swipe.end', imagesSwipeEnd);
 
     /* glideCarouselThumbs init */
@@ -106,7 +111,7 @@ function GlideComponentThumbs(props = defaultProps) {
       carouselImages.destroy();
       carouselThumbs.destroy();
     };
-    
+    /* -next-line react-hooks/exhaustive-deps */
   }, []);
 
   return (
@@ -114,6 +119,7 @@ function GlideComponentThumbs(props = defaultProps) {
       <div className="glide details" ref={glideCarouselImages}>
         <div data-glide-el="track" className="glide__track">
           <div className="glide__slides">
+            {/* -next-line react/destructuring-assignment */}
             {props.settingsImages.data.map((item) => {
               return (
                 <div key={item.id}>
@@ -134,8 +140,10 @@ function GlideComponentThumbs(props = defaultProps) {
       <div className="glide thumbs" ref={glideCarouselThumbs}>
         <div data-glide-el="track" className="glide__track">
           <div className="glide__slides">
+            {/* -next-line react/destructuring-assignment */}
             {props.settingsThumbs.data.map((item, index) => {
               return (
+                // -next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
                 <div
                   className={
                     index === activeIndex
@@ -207,10 +215,14 @@ GlideComponentThumbs.propTypes = {
     rewindDuration: PropTypes.number,
     animationTimingFunc: PropTypes.string,
     direction: PropTypes.string,
+    // -next-line react/forbid-prop-types
     peek: PropTypes.object,
+    // -next-line react/forbid-prop-types
     breakpoints: PropTypes.object,
+    // -next-line react/forbid-prop-types
     classes: PropTypes.object,
     throttle: PropTypes.number,
+    // -next-line react/forbid-prop-types
     data: PropTypes.array,
   }),
   settingsThumbs: PropTypes.shape({
@@ -233,10 +245,14 @@ GlideComponentThumbs.propTypes = {
     rewindDuration: PropTypes.number,
     animationTimingFunc: PropTypes.string,
     direction: PropTypes.string,
+    // -next-line react/forbid-prop-types
     peek: PropTypes.object,
+    // -next-line react/forbid-prop-types
     breakpoints: PropTypes.object,
+    // -next-line react/forbid-prop-types
     classes: PropTypes.object,
     throttle: PropTypes.number,
+    // -next-line react/forbid-prop-types
     data: PropTypes.array,
   }),
   // id: PropTypes.string,

@@ -1,4 +1,6 @@
-
+/*  react-hooks/exhaustive-deps */
+/*  jsx-a11y/click-events-have-key-events */
+/*  jsx-a11y/no-static-element-interactions */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';

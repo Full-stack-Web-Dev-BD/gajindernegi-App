@@ -59,6 +59,7 @@ export default (state = INIT_STATE, action) => {
           filter: null,
         };
       }
+      // -next-line no-case-declarations
       const filteredItems = state.allSurveyItems.filter(
         (item) => item[action.payload.column] === action.payload.value
       );
@@ -81,6 +82,7 @@ export default (state = INIT_STATE, action) => {
           orderColumn: null,
         };
       }
+      // -next-line no-case-declarations
       const sortedItems = state.surveyItems.sort((a, b) => {
         if (a[action.payload] < b[action.payload]) return -1;
         if (a[action.payload] > b[action.payload]) return 1;
@@ -99,7 +101,9 @@ export default (state = INIT_STATE, action) => {
       if (action.payload === '') {
         return { ...state, surveyItems: state.allSurveyItems };
       }
+      // -next-line no-case-declarations
       const keyword = action.payload.toLowerCase();
+      // -next-line no-case-declarations
       const searchItems = state.allSurveyItems.filter(
         (item) =>
           item.title.toLowerCase().indexOf(keyword) > -1 ||

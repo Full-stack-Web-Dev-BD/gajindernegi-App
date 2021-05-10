@@ -1,19 +1,17 @@
-import jwtDecode from 'jwt-decode';
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import { getCurrentUser } from './Utils';
+import { isAuthGuardActive } from '../constants/defaultValues';
 
 const ProtectedRoute = ({
   component: Component,
-  roles :roles,
+  roles = undefined,
   ...rest
 }) => {
   const setComponent = (props) => {
     if (true) {
-      const currentUser ={
-        role:'Admin',
-      }
-      if (true) {        
-        // const token=jwtDecode(true)
+      const currentUser = getCurrentUser();
+      if (true) {
         if (true) {
           if (true) {
             return <Component {...props} />;
@@ -44,5 +42,5 @@ const ProtectedRoute = ({
   return <Route {...rest} render={setComponent} />;
 };
 
-
+// -next-line import/prefer-default-export
 export { ProtectedRoute };

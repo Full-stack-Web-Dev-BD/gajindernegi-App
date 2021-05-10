@@ -43,28 +43,22 @@ const AssetManager = ({ match }) => {
               <div className="position-relative">
                 <CardImg
                   top
-                  src="/image.png"
+                  src="/assets/img/cards/card.png"
                   alt="Card image cap"
                 />
-                <Badge
-                  color="primary"
-                  pill
-                  className="position-absolute badge-top-left"
-                >
-                  File Type
-                </Badge>
-                <Badge
-                  color="secondary"
-                  pill
-                  className="position-absolute badge-top-left-2"
-                >
-                  Preview
-                </Badge>
               </div>
               <CardBody>
-                <CardSubtitle className="mb-4">
-                    Pinterest Beautiful Hill Station Natural Scene HD wallpapers
-                </CardSubtitle>
+                <h3>This is test title</h3>
+                <div style={{borderTop:'1px solid gray',padding:'10px'}}>
+
+                </div>
+                <Badge
+                  style={{right:'10px'}}
+                  color="primary"
+                  pill
+                  className="position-absolute badge-bottom-left"
+                >PSD
+                </Badge>
                 <CardText className="text-muted text-small mb-0 font-weight-light">Used Right </CardText>
                 <CardText className="text-muted text-small mb-0 font-weight-light">Available</CardText>
               </CardBody>

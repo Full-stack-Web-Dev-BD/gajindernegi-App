@@ -1,3 +1,4 @@
+/*  react/no-array-index-key */
 import React from 'react';
 import { Row, CardTitle } from 'reactstrap';
 import IntlMessages from '../../helpers/IntlMessages';

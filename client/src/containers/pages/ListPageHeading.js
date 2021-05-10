@@ -1,3 +1,4 @@
+/*  react/no-array-index-key */
 import React, { useState } from 'react';
 import {
   Row,

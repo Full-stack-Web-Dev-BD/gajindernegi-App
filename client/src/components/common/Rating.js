@@ -19,6 +19,7 @@ const Star = (props) => {
   };
 
   const className = Object.keys(nameMap)
+    // -next-line
     .filter((prop) => (delete starProps[prop], props[prop]))
     .map((prop) => nameMap[prop])
     .join(' ');

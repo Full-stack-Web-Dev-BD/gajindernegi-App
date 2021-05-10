@@ -1,3 +1,4 @@
+/*  react/no-array-index-key */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { injectIntl } from 'react-intl';

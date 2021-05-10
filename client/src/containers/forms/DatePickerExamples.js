@@ -1,3 +1,5 @@
+
+/*  associated-control */
 import React, { useState } from 'react';
 import { injectIntl } from 'react-intl';
 import { Row, Card, CardBody, CardTitle } from 'reactstrap';

@@ -1,3 +1,4 @@
+/*  react/no-array-index-key */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PerfectScrollbar from 'react-perfect-scrollbar';

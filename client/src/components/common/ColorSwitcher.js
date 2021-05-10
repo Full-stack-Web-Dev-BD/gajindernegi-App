@@ -1,4 +1,4 @@
-
+/*  react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect } from 'react';
 import { FormGroup, Label, CustomInput } from 'reactstrap';
 import { colors } from '../../constants/defaultValues';

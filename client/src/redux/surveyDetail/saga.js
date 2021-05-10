@@ -11,6 +11,7 @@ import {
 import surveyDetailData from '../../data/survey.detail.json';
 
 const getSurveyDetailRequest = async () => {
+  // -next-line no-return-await
   return await new Promise((success) => {
     setTimeout(() => {
       success(surveyDetailData.data);
@@ -21,7 +22,9 @@ const getSurveyDetailRequest = async () => {
 };
 
 const deleteQuestionRequest = async (quesitonId, survey) => {
+  // -next-line no-param-reassign
   survey.questions = survey.questions.filter((x) => x.id !== quesitonId);
+  // -next-line no-return-await
   return await new Promise((success) => {
     success(survey);
   })

@@ -1,3 +1,5 @@
+
+/*  associated-control */
 import React, { useState } from 'react';
 import { Card, CardBody, CardTitle, Row } from 'reactstrap';
 import Switch from 'rc-switch';

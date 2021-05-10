@@ -1,3 +1,4 @@
+/*  import/no-cycle */
 /* SETTINGS */
 export const CHANGE_LOCALE = 'CHANGE_LOCALE';
 

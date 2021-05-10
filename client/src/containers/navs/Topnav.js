@@ -7,6 +7,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   Input,
+  Button
 } from 'reactstrap';
 
 import { NavLink } from 'react-router-dom';
@@ -212,7 +213,7 @@ const TopNav = ({
           }
         >
           
-          <img src="/icon.png" style={{borderRadius:'4px', width:'50px'}}/>
+          <img src="https://brandable.ai/images/logo.svg" style={{borderRadius:'4px', width:'50px'}}/>
         </NavLink>
         <NavLink
           to="#"
@@ -241,14 +242,14 @@ const TopNav = ({
       </div>
       <div className="navbar-right">        
         <div className="position-relative d-none d-none d-lg-inline-block mr-3">
-          <a
-            className="btn btn-outline-primary btn-sm ml-2"
-            target="_top"
-            href="#"
-          >
-            <span className="iconsminds-address-book-2 glyph-icon"></span>
-            <IntlMessages id="  New Project" />
-          </a>
+          <Button
+              color="primary"
+              className="btn-shadow"
+              size="md"
+            >
+              <span className="simple-icon-cloud-upload glyph-icon"></span>
+              <span className="ml-1">Upload Media</span>
+            </Button>
         </div>
         <div className="header-icons d-inline-block align-middle">
           <TopnavNotifications /> 

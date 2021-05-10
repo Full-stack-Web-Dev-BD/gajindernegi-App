@@ -1,3 +1,4 @@
+/*  react/no-array-index-key */
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';

@@ -1,3 +1,8 @@
+/*  react/destructuring-assignment */
+/*  react/display-name */
+/*  no-nested-ternary */
+/*  react/no-array-index-key */
+/*  react/jsx-key */
 import React from 'react';
 import { useTable, usePagination, useSortBy } from 'react-table';
 import { Card, CardBody, CardTitle } from 'reactstrap'; //
