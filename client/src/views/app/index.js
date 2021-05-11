@@ -22,8 +22,9 @@ const MyProject = React.lazy(() =>
 const Setting = React.lazy(() =>
   import(/* webpackChunkName: "viwes-blank-page" */ './Setting/Setting')
 );
-
-
+const SingleAsset = React.lazy(() =>
+  import(/* webpackChunkName: "viwes-blank-page" */ './AssetManager/SingleAsset')
+);
 
 
 // public route
@@ -35,7 +36,6 @@ const App = ({ match }) => {
       <div className="dashboard-wrapper">
         <Suspense fallback={<div className="loading" />}>
           <Switch>
-            <Redirect exact from={`${match.url}/`} to={`${match.url}/gogo`} />
             {/* <ProtectedRoute
               path={`${match.url}/asset-manager`}
               component={AssetManager}
@@ -44,19 +44,28 @@ const App = ({ match }) => {
             <Route
               path={`${match.url}/asset-manager`}
               render={(props) => <AssetManager {...props} />}
-            /> 
+              exact
+            />
+            <Route
+              path={`${match.url}/asset-manager/single-asset`}
+              render={(props) => <SingleAsset {...props} />}
+              exact
+            />
             <Route
               path={`${match.url}/brand-kit`}
               render={(props) => <BrandKit {...props} />}
-            /> 
+              exact
+            />
             <Route
               path={`${match.url}/my-project`}
               render={(props) => <MyProject {...props} />}
+              exact
             />
             <Route
               path={`${match.url}/setting`}
               render={(props) => <Setting {...props} />}
-            /> 
+              exact
+            />
             {/* <Redirect to="/error" /> */}
           </Switch>
         </Suspense>
