@@ -18,24 +18,33 @@ import IntlMessages from '../../helpers/IntlMessages';
 import { Colxx } from '../../components/common/CustomBootstrap';
 import { adminRoot } from '../../constants/defaultValues';
 import AppBarOuter from './AppBar';
+import axios from 'axios';
 
 const Login = ({ history }) => {
-  const [email] = useState('demo@gogo.com');
-  const [password] = useState('gogo123');
-  const [name] = useState('Sarah Kortney');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [formError, setFormError] = useState({});
 
-  const onUserRegister = () => {
-    return history.push('app/dashboards/default');
-    if (email !== '' && password !== '') {
-      history.push(adminRoot);
-    }
-    // call registerUserAction()
+  const onUserRegister = (e) => {
+    e.preventDefault();
+    return history.push('/app/asset-manager');
+
+    axios
+      .post('/api/user/login', { email: email, password: password })
+      .then((res) => {
+        alert('response ok');
+      })
+      .catch((err) => {
+        if (err.response) {
+          setFormError(err.response.data);;
+        }
+      });
   };
 
   return (
     <div>
       <div className="p-4 bg-info"></div>
-      {/* <AppBarOuter/> */}
+      <AppBarOuter/>
       <Row className="h-100">
         <Colxx xxs="12" md="6" className="mt-5 mx-auto my-auto">
           <Card className="auth-card mt-5 ">
@@ -49,44 +58,61 @@ const Login = ({ history }) => {
                     <IntlMessages id="Login in to your Account" />
                   </CardTitle>
                 </div>
-                <Form>
-                  <FormGroup className="form-group has-float-label  mb-4">
-                    <Label>
-                      <IntlMessages id="user.fullname" />
-                    </Label>
-                    <Input type="name" defaultValue={name} />
-                  </FormGroup>
-
+                <form
+                  onSubmit={(e) => {
+                    onUserRegister(e);
+                  }}
+                >
+                  {formError.massage ? (
+                    <p className="text-danger"> {formError.message} </p>
+                  ) : (
+                    ''
+                  )}
                   <FormGroup className="form-group has-float-label  mb-4">
                     <Label>
                       <IntlMessages id="user.email" />
                     </Label>
-                    <Input type="email" defaultValue={email} />
+                    <Input
+                      onChange={(e) => setEmail(e.target.value)}
+                      type="email"
+                      required
+                    />
                   </FormGroup>
+
+                  {formError.email ? (
+                    <p className="text-danger"> {formError.email} </p>
+                  ) : (
+                    ''
+                  )}
 
                   <FormGroup className="form-group has-float-label  mb-4">
                     <Label>
-                      <IntlMessages
-                        id="user.password"
-                        defaultValue={password}
-                      />
+                      <IntlMessages id="Password" />
                     </Label>
-                    <Input type="password" />
+                    <Input
+                      onChange={(e) => setPassword(e.target.value)}
+                      type="password"
+                      required
+                    />
                   </FormGroup>
+                  {formError.password ? (
+                    <p className="text-danger"> {formError.password} </p>
+                  ) : (
+                    ''
+                  )}
                   <div className="d-flex justify-content-end align-items-center">
                     <a href="/app/asset-manager">
                       <Button
                         color="primary"
                         className="btn-shadow d-block"
                         size="lg"
-                        onClick={() => onUserRegister()}
                       >
                         <IntlMessages id="Login" />
                       </Button>
                     </a>
                   </div>
                   <a href="/user/login">Sign up</a>
-                </Form>
+                </form>
               </div>
             </CardBody>
           </Card>

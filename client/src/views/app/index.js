@@ -22,8 +22,17 @@ const MyProject = React.lazy(() =>
 const Setting = React.lazy(() =>
   import(/* webpackChunkName: "viwes-blank-page" */ './Setting/Setting')
 );
+
+// hidden page
 const SingleAsset = React.lazy(() =>
-  import(/* webpackChunkName: "viwes-blank-page" */ './AssetManager/SingleAsset')
+  import(
+    /* webpackChunkName: "viwes-blank-page" */ './AssetManager/SingleAsset'
+  )
+);
+const UploadPage = React.lazy(() =>
+  import(
+    /* webpackChunkName: "viwes-blank-page" */ './AssetManager/UploadPage/UploadPage'
+  )
 );
 
 
@@ -49,6 +58,11 @@ const App = ({ match }) => {
             <Route
               path={`${match.url}/asset-manager/single-asset`}
               render={(props) => <SingleAsset {...props} />}
+              exact
+            />
+            <Route
+              path={`${match.url}/asset-manager/upload-file`}
+              render={(props) => <UploadPage {...props} />}
               exact
             />
             <Route

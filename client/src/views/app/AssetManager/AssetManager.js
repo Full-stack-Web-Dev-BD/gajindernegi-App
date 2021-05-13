@@ -19,22 +19,34 @@ const AssetManager = ({ match }) => {
 
   return (
     <>
-      <div className="mt-3 mb-5">
-        {showUploadComponent ? (
-          <UploadPage />
-        ) : (
-          <a
-            className="btn btn-outline-primary btn-sm ml-2"
-            target="_top"
-            href="#"
-            onClick={(e) => {
-              setShowUploadComponent(!showUploadComponent);
-            }}
-          >
-            <span className="simple-icon-cloud-upload glyph-icon"></span>
-            <IntlMessages id="  Upload Media " />
-          </a>
-        )}
+      <div className="row mb-5">
+        <div className="col-md-3">
+          <h3>My Asset</h3>
+        </div>
+        <div className="col-md-6">
+          <input
+            className="form-control"
+            name="searchKeyword"
+            id="searchKeyword"
+            placeholder="Search Assets"
+          />
+        </div>
+        <div className="col-md-3">
+          <div className="">
+            {showUploadComponent ? (
+              <UploadPage />
+            ) : (
+              <a
+                className="btn btn-outline-primary btn-sm ml-2"
+                target="_top"
+                href="/app/asset-manager/upload-file"
+              >
+                <span className="simple-icon-cloud-upload glyph-icon"></span>
+                <IntlMessages id="  Upload Asset " />
+              </a>
+            )}
+          </div>
+        </div>
       </div>
       <div className="row">
         {[3, 1234, 15, 13, , 3, 1].map((el) => (

@@ -212,8 +212,10 @@ const TopNav = ({
             menuButtonClick(e, menuClickCount, containerClassnames)
           }
         >
-          
-          <img src="https://brandable.ai/images/logo.svg" style={{borderRadius:'4px', width:'50px'}}/>
+          <img
+            src="https://brandable.ai/images/logo.svg"
+            style={{ borderRadius: '4px', width: '50px' }}
+          />
         </NavLink>
         <NavLink
           to="#"
@@ -222,7 +224,7 @@ const TopNav = ({
           onClick={(e) => mobileMenuButtonClick(e, containerClassnames)}
         >
           <MobileMenuIcon />
-        </NavLink> 
+        </NavLink>
         <div className="search">
           <Input
             name="searchKeyword"
@@ -240,19 +242,17 @@ const TopNav = ({
           </span>
         </div>
       </div>
-      <div className="navbar-right">        
+      <div className="navbar-right">
         <div className="position-relative d-none d-none d-lg-inline-block mr-3">
-          <Button
-              color="primary"
-              className="btn-shadow"
-              size="md"
-            >
-              <span className="simple-icon-cloud-upload glyph-icon"></span>
-              <span className="ml-1">Upload Media</span>
-            </Button>
+          <Button color="primary" className="btn-shadow" size="md">
+            <span
+              className="simple-icon-plus glyph-icon"
+            ></span>
+            <span className="ml-1">Create New</span>
+          </Button>
         </div>
         <div className="header-icons d-inline-block align-middle">
-          <TopnavNotifications /> 
+          <TopnavNotifications />
         </div>
         <div className="user d-inline-block">
           <UncontrolledDropdown className="dropdown-menu-right">
@@ -264,7 +264,7 @@ const TopNav = ({
             </DropdownToggle>
             <DropdownMenu className="mt-3" right>
               <DropdownItem>Account</DropdownItem>
-              <DropdownItem onClick={() => window.location.href='/' }>
+              <DropdownItem onClick={() => (window.location.href = '/')}>
                 Sign out
               </DropdownItem>
             </DropdownMenu>
